@@ -38,4 +38,5 @@ Route::group(['prefix' => 'home/jurnal/berita'], function($id = null){
 
 Route::group(['prefix' => 'home/jurnal/informasi'], function(){
     Route::get('/', [ArtikelController::class, 'informasi'])->name('informasi');
+    Route::post('/upload_informasi', [ArtikelController::class, 'upload_informasi'])->name('upload_informasi');
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tag;
 use App\Models\Berita;
+use App\Models\Informasi;
 use Illuminate\Http\Request;
 
 class ArtikelController extends Controller
@@ -86,6 +87,26 @@ class ArtikelController extends Controller
     // INFORMASI
     public function informasi()
     {
-        # code...
+        $data = Informasi::orderBy('id', 'DESC')->get();
+        return view('Dashboard/informasi/index', compact('data'));
+    }
+    public function upload_informasi(Request $request)
+    {
+        $request->validate([
+            'judul' => 'required',
+            'isi'   => 'required',
+            'gambar_informasi' => 'required|mimes:jpeg,jpg,png,svg'
+        ]);
+        $gambar = $request->file('gambar_informasi');
+        $nama_file = $gambar->getClientOriginalName();
+        $path = 'gambar_informasi';
+        $gambar->move($path, $nama_file);
+        $data = Informasi::create([
+            'judul' => $request->judul,
+            'isi'   => $request->isi,
+            'gambar_informasi' => $nama_file
+        ]);
+        return redirect()->back()->with('success', 'Informasi Berhasil Di Upload');
+       
     }
 }

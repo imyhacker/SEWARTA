@@ -20,7 +20,7 @@
               <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Komponen Jurnal</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-lin beep beep-sidebar" href="{{route('berita')}}">Berita</a></li>                
-                <li><a class="nav-link beep beep-sidebar" href="https://demo.getstisla.com/components-avatar.html">Informasi</a></li> 
+                <li><a class="nav-link beep beep-sidebar" href="{{route('informasi')}}">Informasi</a></li> 
                
             </ul>
             </li>

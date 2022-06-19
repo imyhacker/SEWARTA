@@ -40,8 +40,8 @@
                                                     Option
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="#">Edit</a>
-                                                    <a class="dropdown-item" href="#">Hapus</a>
+                                                    <a class="dropdown-item" href="{{route('edit_informasi', $info->id)}}">Edit</a>
+                                                    <a class="dropdown-item" href="{{route('hapus_informasi', $info->id)}}">Hapus</a>
                                                 </div>
                                             </td>
                                         </tr>

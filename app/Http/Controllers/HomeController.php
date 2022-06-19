@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Desa;
 use App\Models\Aplikasi;
 use Illuminate\Http\Request;
 
@@ -25,6 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $aplikasi = Aplikasi::first();
-        return view('Dashboard/index', compact('aplikasi'));
+        $nama_desa = Desa::first();
+        return view('Dashboard/index', compact('aplikasi', 'nama_desa'));
     }
 }

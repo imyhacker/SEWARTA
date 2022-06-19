@@ -1,34 +1,29 @@
+<style>
+	
+.cta {
+  background: url("{{url('/depan/depan.jpg')}}") no-repeat 50% 50%;
+  background-size: cover;
+  position: relative;
+}
+</style>
+
 <section class="cta-section ">
 	<div class="container">
 		<div class="cta position-relative">
 			<div class="row">
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="counter-stat">
-						<i class="icofont-doctor"></i>
-						<span class="h3">58</span>k
-						<p>Happy People</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
+				
+				<div class="col-lg-6 col-md-6 col-sm-6">
 					<div class="counter-stat">
 						<i class="icofont-flag"></i>
-						<span class="h3">700</span>+
-						<p>Surgery Comepleted</p>
+						<span class="h3">{{$tb}}</span>
+						<p>Berita</p>
 					</div>
 				</div>
-				
-				<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="col-lg-6 col-md-6 col-sm-6">
 					<div class="counter-stat">
-						<i class="icofont-badge"></i>
-						<span class="h3">40</span>+
-						<p>Expert Doctors</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="counter-stat">
-						<i class="icofont-globe"></i>
-						<span class="h3">20</span>
-						<p>Worldwide Branch</p>
+						<i class="icofont-flag"></i>
+						<span class="h3">{{$ti}}</span>
+						<p>Informasi</p>
 					</div>
 				</div>
 			</div>

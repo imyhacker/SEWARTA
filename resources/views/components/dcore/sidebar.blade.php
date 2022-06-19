@@ -35,7 +35,8 @@
                             type="button">Kontak Aplikasi</a></li>
                     <li><a class="nav-link" data-toggle="modal" href="#" data-target="#tentangKami"
                             type="button">Tentang Kami</a></li>
-
+                    <li><a class="nav-link" data-toggle="modal" href="#" data-target="#namaDesa" type="button">Nama
+                            Desa</a></li>
                 </ul>
             </li>
         </ul>
@@ -94,19 +95,19 @@
                 <div class="modal-body">
                     <div class="form-group">
 
-                            <label>Alamat Lengkap</label>
-                            <textarea name="alamat" class="form-control"></textarea>
+                        <label>Alamat Lengkap</label>
+                        <textarea name="alamat" class="form-control"></textarea>
 
                     </div>
                     <div class="form-group">
 
-                            <label>Nomor Hp</label>
-                            <input type="number" class="form-control" name="nomor_hp" placeholder="+62xxxxxxxxx">
+                        <label>Nomor Hp</label>
+                        <input type="number" class="form-control" name="nomor_hp" placeholder="+62xxxxxxxxx">
                     </div>
                     <div class="form-group">
 
-                            <label>Alamat Email</label>
-                            <input type="email" class="form-control" name="email" placeholder="xxx@mail.com">
+                        <label>Alamat Email</label>
+                        <input type="email" class="form-control" name="email" placeholder="xxx@mail.com">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -135,16 +136,47 @@
                 <div class="modal-body">
                     <div class="form-group">
 
-                            <label>Gambar Background</label>
-                            <input type="file" name="gambar_tentang" class="form-control-file" id="">
+                        <label>Gambar Background</label>
+                        <input type="file" name="gambar_tentang" class="form-control-file" id="">
 
                     </div>
                     <div class="form-group">
 
-                            <label>Isi</label>
-                            <textarea name="isi" id="editor1" class="form-control" cols="30" rows="10"></textarea>
-                          </div>
-                   
+                        <label>Isi</label>
+                        <textarea name="isi" id="editor1" class="form-control" cols="30" rows="10"></textarea>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="namaDesa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nama Desa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{route('upload_desa')}}" method="POST">
+                @csrf
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Desa</label>
+                        <input type="text" class="form-control" placeholder="Nama Desa" name="desa">
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

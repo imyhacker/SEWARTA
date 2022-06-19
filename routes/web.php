@@ -23,6 +23,8 @@ use App\Http\Controllers\SettingController;
 
 Route::group(['prefix' => '/'], function(){
     Route::get('/', [ClientController::class, 'index'])->name('index');
+    Route::get('/tentang', [ClientController::class, 'tentang'])->name('tentang');
+    Route::get('/berita', [ClientController::class, 'berita'])->name('semua_berita');
 });
 
 Auth::routes();
@@ -52,4 +54,5 @@ Route::group(['prefix' => 'home/setting'], function(){
     Route::post('/upload_nama_aplikasi', [SettingController::class, 'upload_nama_aplikasi'])->name('upload_nama_aplikasi');
     Route::post('/upload_alamat', [SettingController::class, 'upload_alamat'])->name('upload_alamat');
     Route::post('/upload_tentang', [SettingController::class, 'upload_tentang'])->name('upload_tentang');
+    Route::post('/upload_desa', [SettingController::class, 'upload_desa'])->name('upload_desa');
 });

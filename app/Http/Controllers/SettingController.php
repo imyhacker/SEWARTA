@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Desa;
 use App\Models\Alamat;
 use App\Models\Tentang;
 use App\Models\Aplikasi;
@@ -48,10 +49,7 @@ class SettingController extends Controller
     }
     public function upload_tentang(Request $request)
     {
-        $request->validate([
-            'tentang' => 'required',
-            'gambar_tentang' => 'required|mimes:jpg,jpeg,png,svg'
-        ]);
+       
         $data = Tentang::first();
        
         if($data == null){
@@ -65,7 +63,7 @@ class SettingController extends Controller
             ]);
             return redirect()->back()->with('success', 'Tentang Kami Berhasil Di Input');
 
-        }elseif($data !== null){
+        }else{
             $gambar = $request->file('gambar_tentang');
 
             $nama_file = $gambar->getClientOriginalName();
@@ -80,5 +78,22 @@ class SettingController extends Controller
 
         }
        
+    }
+    public function upload_desa(Request $request)
+    {
+        $data = Desa::first();
+        if($data == null){
+            $data = Desa::create([
+                'desa' => $request->desa,
+            ]);
+            return redirect()->back()->with('success', 'Nama Desa Berhasil Di Update');
+
+        }else{
+            $data = Desa::first()->update([
+                'desa' => $request->desa,
+            ]);
+            return redirect()->back()->with('success', 'Nama Desa Berhasil Di Update');
+
+        }
     }
 }

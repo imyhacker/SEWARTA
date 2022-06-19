@@ -19,7 +19,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col-md-12 d-flex justify-content-center">
-                      <h3>{{$aplikasi->nama_aplikasi ?? config('app.name')}}</h3>
+                      <h3>{{$aplikasi->nama_aplikasi ?? config('app.name')}} - {{$nama_desa->desa ?? 'Belum Ada Desa'}}</h3>
                     </div>
                     <div class="col-md-12">
                       <table class="table table-bordered">

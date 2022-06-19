@@ -25,6 +25,7 @@
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
   <script>
    CKEDITOR.replace( 'editor1' );
+   CKEDITOR.replace('edit2');
    $(document).ready( function () {
     $('#table_id').DataTable();
     $('#table_tag').DataTable();

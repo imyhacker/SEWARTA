@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Isi Berita</label>
-                                    <textarea name="isi" id="editor1" class="form-control" cols="30"
+                                    <textarea name="isi" id="edit2" class="form-control" cols="30"
                                         rows="10">{{$data->isi}}</textarea>
                                 </div>
                                 <div class="form-group">

@@ -16,8 +16,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block text-center">
-                        <span class="text-white">Berita</span>
-                        <h1 class="text-capitalize mb-5 text-lg">Semua Berita</h1>
+                        <span class="text-white">Berita : </span>
+                        <h1 class="text-capitalize mb-5 text-lg">{{$berita->judul}}</h1>
 
                     </div>
                 </div>
@@ -30,49 +30,45 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="row">
-                        @forelse($berita as $br)
                         <div class="col-lg-12 col-md-12 mb-5">
                             <div class="blog-item">
                                 <div class="blog-thumb">
-                                    <img src="{{asset('gambar_berita/'.$br->gambar_berita)}}" alt="" class="img-fluid ">
+                                    <img src="{{asset('gambar_berita/'.$berita->gambar_berita)}}" alt="" class="img-fluid ">
                                 </div>
 
                                 <div class="blog-item-content">
                                     <div class="blog-item-meta mb-3 mt-4">
                                         <span class="text-black text-capitalize mr-3"><i
-                                                class="icofont-calendar mr-1"></i> {{$br->created_at->diffForHumans()}}</span>
+                                                class="icofont-calendar mr-1"></i> {{$berita->created_at->diffForHumans()}}</span>
                                     </div>
 
-                                    <h2 class="mt-3 mb-3"><a href="{{route('baca', $br->id)}}">{{$br->judul}}</a></h2>
+                                    <h2 class="mt-3 mb-3">{{$berita->judul}}</h2>
 
-                                    <p class="mb-4">{!! Str::limit($br->isi, '199', '...') !!}</p>
+                                    <p class="mb-4 text-justify">{!! $berita->isi !!}</p>
 
-                                    <a href="{{route('baca', $br->id)}}" target="_blank"
-                                        class="btn btn-main btn-icon btn-round-full">Read More <i
-                                            class="icofont-simple-right ml-2  "></i></a>
+                                    <div class="row">
+                        <div class="col-md-4 mt-3">
+                            <a href="http://www.facebook.com/sharer.php?u={{url()->current()}}" target="_blank" class="btn btn-outline-info btn-block w-100"><i class="fas fa-share-alt"></i> Share Facebook <i class="icofont-share"></i></a>
+                        </div>
+                        <div class="col-md-4 mt-3">
+                        <a href="mailto:?Subject=Ada Yang Baru Nih&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 {{url()->current()}}" class="btn btn-outline-danger btn-block w-100"><i class="fas fa-facebook"></i> Share Email <i class="icofont-share"></i></a>
+                        </div>
+                        <div class="col-md-4 mt-3">
+                        <a href="https://api.whatsapp.com/send?text=Ada Yang Baru Nih, Yuk Lihat Di Link Berikut {{url()->current()}}" class="btn btn-outline-success btn-block w-100"><i class="fas fa-facebook"></i> Share Whatsapp <i class="icofont-share"></i></a>
+
+                        </div>
+                    </div>
                                 </div>
                             </div>
                         </div>
-                        @empty
-                        <div class="col-lg-12 col-md-12 mb-5">
-                            Tidak Ada Berita
-                        </div>
-                        @endforelse
+                        
                     </div>
                 </div>
                 
                <x-client.side :tag="$tag" :ps="$ps"/>
             </div>
 
-            <div class="row mt-5">
-                <div class="col-lg-8">
-                    <nav class="pagination py-2 d-inline-block">
-                        <div class="nav-links">
-                            {{$berita->links()}}
-                        </div>
-                    </nav>
-                </div>
-            </div>
+            
         </div>
     </section>
 

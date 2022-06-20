@@ -21,10 +21,12 @@ use App\Http\Controllers\SettingController;
 //     return view('welcome');
 // });
 
-Route::group(['prefix' => '/'], function(){
+Route::group(['prefix' => '/'], function($id = null){
     Route::get('/', [ClientController::class, 'index'])->name('index');
     Route::get('/tentang', [ClientController::class, 'tentang'])->name('tentang');
     Route::get('/berita', [ClientController::class, 'berita'])->name('semua_berita');
+    Route::get('/berita/{id}/baca', [ClientController::class, 'baca'])->name('baca', $id);
+    Route::get('/informasi', [ClientController::class, 'informasi'])->name('informasi');
 });
 
 Auth::routes();

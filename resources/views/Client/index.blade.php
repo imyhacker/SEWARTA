@@ -1,6 +1,6 @@
 <x-client.head />
 <body id="top">
-<x-client.header :alamat="$alamat"/>
+<x-client.header :alamat="$alamat" :nama="$nama" />
 <x-client.banner :tentang="$tentang" :nama="$nama" :desa="$desa"/>
 <x-client.fitur :tentang="$tentang" :nama="$nama" :tb="$tb" :ti="$ti" :desa="$desa"/>
 <x-client.about :tentang="$tentang" :nama="$nama" :desa="$desa"/>

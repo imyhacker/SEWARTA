@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tag;
 use App\Models\Desa;
 use App\Models\Alamat;
 use App\Models\Berita;
@@ -40,6 +41,25 @@ class ClientController extends Controller
         $alamat = Alamat::first();
         $desa = Desa::first();
         $berita = Berita::orderBy('id', 'DESC')->simplePaginate(3);
-        return view('Client/berita', compact('nama', 'tentang', 'alamat', 'desa', 'berita'));
+
+        $tag = Tag::all();
+        $ps = Berita::orderBy('id', 'DESC')->limit(5)->get();
+        return view('Client/berita', compact('nama', 'tentang', 'alamat', 'desa', 'berita', 'tag', 'ps'));
+    }
+    public function baca($id)
+    {
+        $nama = Aplikasi::first();
+        $tentang = Tentang::first();
+        $alamat = Alamat::first();
+        $desa = Desa::first();
+        $berita = Berita::find($id);
+        
+        $tag = Tag::all();
+        $ps = Berita::orderBy('id', 'DESC')->limit(5)->get();
+        return view('Client/baca', compact('nama','tentang','alamat', 'desa', 'berita', 'tag', 'ps'));
+    }
+    public function informasi()
+    {
+        return "informasi";
     }
 }

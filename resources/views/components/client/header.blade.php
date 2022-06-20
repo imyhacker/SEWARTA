@@ -5,7 +5,7 @@
 			<div class="row align-items-center">
 				<div class="col-lg-6">
 					<ul class="top-bar-info list-inline-item pl-0 mb-0">
-						<li class="list-inline-item"><a href="mailto:support@gmail.com"><i class="icofont-support-faq mr-2"></i>{{$alamat->email}}</a></li>
+						<li class="list-inline-item"><a href="mailto:{{$alamat->email}}"><i class="icofont-support-faq mr-2"></i>{{$alamat->email}}</a></li>
 						<li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>{{$alamat->alamat}} </li>
 					</ul>
 				</div>
@@ -22,8 +22,8 @@
 	</div>
 	<nav class="navbar navbar-expand-lg navigation" id="navbar">
 		<div class="container">
-		 	 <a class="navbar-brand" href="index.html">
-			  	<img src="images/logo.png" alt="" class="img-fluid">
+		 	 <a class="navbar-brand" href="{{url('/')}}">
+			  	<h3>{{$nama->nama_aplikasi}}</h3>
 			  </a>
 
 		  	<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +40,7 @@
 			    <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="department.html" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Jurnal <i class="icofont-thin-down"></i></a>
 					<ul class="dropdown-menu" aria-labelledby="dropdown02">
-						<li><a class="dropdown-item" href="department.html">Berita</a></li>
+						<li><a class="dropdown-item" href="{{route('semua_berita')}}">Berita</a></li>
 						<li><a class="dropdown-item" href="department-single.html">Informasi</a></li>
 					</ul>
 			  	</li>

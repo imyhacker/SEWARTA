@@ -16,8 +16,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block text-center">
-                        <span class="text-white">Berita : </span>
-                        <h1 class="text-capitalize mb-5 text-lg">{{$berita->judul}}</h1>
+                        <span class="text-white">Informasi : </span>
+                        <h1 class="text-capitalize mb-5 text-lg">{{$info->judul}}</h1>
 
                     </div>
                 </div>
@@ -28,23 +28,23 @@
     <section class="section blog-wrap">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 mb-5">
                             <div class="blog-item">
                                 <div class="blog-thumb">
-                                    <img src="{{asset('gambar_berita/'.$berita->gambar_berita)}}" alt="" class="img-fluid ">
+                                    <img src="{{asset('gambar_informasi/'.$info->gambar_informasi)}}" alt="" class="img-fluid ">
                                 </div>
 
                                 <div class="blog-item-content">
                                     <div class="blog-item-meta mb-3 mt-4">
                                         <span class="text-black text-capitalize mr-3"><i
-                                                class="icofont-calendar mr-1"></i> {{$berita->created_at->diffForHumans()}}</span>
+                                                class="icofont-calendar mr-1"></i> {{$info->created_at->diffForHumans()}}</span>
                                     </div>
 
-                                    <h2 class="mt-3 mb-3">{{$berita->judul}}</h2>
+                                    <h2 class="mt-3 mb-3">{{$info->judul}}</h2>
 
-                                    <p class="mb-4 text-justify">{!! $berita->isi !!}</p>
+                                    <p class="mb-4 text-justify">{!! $info->isi !!}</p>
 
                                     <div class="row">
                         <div class="col-md-4 mt-3">
@@ -65,7 +65,6 @@
                     </div>
                 </div>
                 
-               <x-client.side :tag="$tag" :ps="$ps"/>
             </div>
 
             
@@ -79,7 +78,9 @@
     <!-- 
     Essential Scripts
     =====================================-->
+
     <x-client.script />
+
 
 </body>
 

@@ -11,7 +11,7 @@
                     <h4>Total Berita</h4>
                 </div>
                 <div class="card-body">
-                    $187,13
+                    {{$tb}}
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
                     <h4>Total Informasi</h4>
                 </div>
                 <div class="card-body">
-                    4,732
+                {{$ti}}
                 </div>
             </div>
         </div>

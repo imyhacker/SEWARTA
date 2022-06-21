@@ -12,7 +12,7 @@
                                 <span>{{$tb}} Total Berita</span>
                                 <h4 class="mb-3">Berita Desa {{$desa->desa ?? "Belum ada nama desa"}}</h4>
                                 <p class="mb-4">Baca Berita Terupdate Di Desa {{$desa->desa ?? "Belum ada nama desa"}}</p>
-                                <a href="appoinment.html" class="btn btn-main btn-round-full">Lihat Semua</a>
+                                <a href="{{route('semua_berita')}}" class="btn btn-main btn-round-full">Lihat Semua</a>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -23,7 +23,7 @@
                                 <span>{{$ti}} Total Informasi</span>
                                 <h4 class="mb-3">Informasi Desa {{$desa->desa ?? "Belum ada nama desa"}}</h4>
                                 <p class="mb-4">Baca Informasi Terupdate Di Desa {{$desa->desa ?? "Belum ada nama desa"}}</p>
-                                <a href="appoinment.html" class="btn btn-main btn-round-full">Lihat Semua</a>
+                                <a href="{{route('semua_informasi')}}" class="btn btn-main btn-round-full">Lihat Semua</a>
                             </div>
                         </div>
                     </div>

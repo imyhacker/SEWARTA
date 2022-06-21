@@ -56,10 +56,33 @@ class ClientController extends Controller
         
         $tag = Tag::all();
         $ps = Berita::orderBy('id', 'DESC')->limit(5)->get();
+
+        $tam = Berita::find($id)->update([
+            'viewer' => $berita->viewer + 1
+        ]);
         return view('Client/baca', compact('nama','tentang','alamat', 'desa', 'berita', 'tag', 'ps'));
     }
     public function informasi()
     {
-        return "informasi";
+        $nama = Aplikasi::first();
+        $tentang = Tentang::first();
+        $alamat = Alamat::first();
+        $desa = Desa::first();
+        
+        $info = Informasi::orderBy('id', 'DESC')->simplePaginate(10);
+        return view('Client/informasi', compact('nama','tentang','alamat', 'desa', 'info'));
+    }
+    public function baca_info($id)
+    {
+        $nama = Aplikasi::first();
+        $tentang = Tentang::first();
+        $alamat = Alamat::first();
+        $desa = Desa::first();
+        $info = Informasi::find($id);
+        
+        $tam = Informasi::find($id)->update([
+            'viewer' => $info->viewer + 1
+        ]);
+        return view('Client/baca_info', compact('nama','tentang','alamat', 'desa', 'info'));
     }
 }

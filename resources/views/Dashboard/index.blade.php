@@ -7,7 +7,7 @@
       <x-dcore.alert />
       <div class="main-content">
         <section class="section">
-        <x-dcore.card />
+        <x-dcore.card :tb="$tb" :ti="$ti"/>
 
         <!-- MAIN OF CENTER CONTENT -->
           <div class="row">
@@ -26,23 +26,19 @@
                         <tr>
                           <th>Alamat Lengkap</th>
                           <td>:</td>
-                          <td></td>
+                          <td>{{$alamat->alamat ?? 'Belum ada alamat '}}</td>
                         </tr>
                         <tr>
                           <th>Alamat Email</th>
                           <td>:</td>
-                          <td></td>
+                          <td>{{$alamat->email ?? 'Belum ada alamat email'}}</td>
                         </tr>
                         <tr>
                           <th>Nomor HandPhone</th>
                           <td>:</td>
-                          <td></td>
+                          <td>{{$alamat->nomor_hp ?? 'Belum ada nomor HP '}}</td>
                         </tr>
-                        <tr>
-                          <th>Tentang Kami</th>
-                          <td>:</td>
-                          <td>asd</td>
-                        </tr>
+                       
                       </table>
                     </div>
                   </div>

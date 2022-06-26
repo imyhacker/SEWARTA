@@ -49,7 +49,6 @@
 			   <li class="nav-item"><a class="nav-link" href="{{url('/home')}}">Dashboard</a></li>
 			   @guest
 			   <li class="nav-item"><a class="nav-link" href="{{url('/login')}}">Sign In</a></li>
-
 			   @endguest
 			   @endauth
 			</ul>

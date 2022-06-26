@@ -27,6 +27,7 @@
                                             <th>Judul Berita</th>
                                             <th>Tag</th>
                                             <th>Viewer</th>
+                                            <th>Tanggal Upload</th>
                                             <th>Option</th>
                                         </tr>
                                     </thead>
@@ -38,6 +39,7 @@
                                             <td>{{$berita->judul}}</td>
                                             <td>{{$berita->tag}}</td>
                                             <td>{{$berita->viewer}}</td>
+                                            <td>{{$berita->created_at->format('d F Y')}}</td>
                                             <td>
                                                 <a class="btn btn-primary dropdown-toggle" href="#" role="button"
                                                     id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
@@ -132,7 +134,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Isi Berita</label>
-                                <textarea name="isi" id="editor1" class="form-control" cols="30" rows="10"></textarea>
+                                <textarea name="isi" id="edit1" class="form-control" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">

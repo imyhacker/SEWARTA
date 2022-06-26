@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="https://demo.getstisla.com/assets/css/style.css">
   <link rel="stylesheet" href="https://demo.getstisla.com/assets/css/components.css">
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
 
 </head>

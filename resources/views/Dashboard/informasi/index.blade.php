@@ -23,6 +23,7 @@
                                             <th>No</th>
                                             <th>Judul Informasi</th>
                                             <th>Viewer</th>
+                                            <th>Tanggal Upload</th>
                                             <th>Option</th>
                                         </tr>
                                     </thead>
@@ -33,6 +34,7 @@
                                             <td>{{$no++}}</td>
                                             <td>{{$info->judul}}</td>
                                             <td>{{$info->viewer}}</td>
+                                            <td>{{$info->created_at->format('d F Y')}}</td>
                                             <td>
                                                 <button class="btn btn-primary dropdown-toggle" type="button"
                                                     id="dropdownMenuButton" data-toggle="dropdown"
@@ -83,7 +85,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Isi Informasi</label>
-                                <textarea name="isi" class="form-control" id="editor1" cols="30" rows="10"></textarea>
+                                <textarea name="isi" class="form-control" id="edit2" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">

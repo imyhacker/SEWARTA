@@ -28,8 +28,17 @@
                         <input type="text" name="judul" class="form-control" placeholder="Judul Informasi" value="{{$data->judul}}">
                     </div>
                     <div class="form-group">
+                                <label>Kategori</label>
+                                <select name="kategori" class="form-control">
+                                    <option disabled selected value>Pilih Kategori</option>
+                                    @foreach($kateg as $ktg)
+                                    <option value="{{$ktg->kategori}}" @if($data->kategori == $ktg->kategori) selected @endif>{{$ktg->kategori}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                    <div class="form-group">
                         <label>Isi Informasi</label>
-                        <textarea name="isi" class="form-control" id="editor1" cols="30" rows="10">{{$data->isi}}</textarea>
+                        <textarea name="isi" class="form-control" id="edit3" cols="30" rows="10">{{$data->isi}}</textarea>
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-block btn-outline-success" value="Update Informasi">

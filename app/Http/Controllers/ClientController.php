@@ -9,6 +9,7 @@ use App\Models\Berita;
 use App\Models\Tentang;
 use App\Models\Aplikasi;
 use App\Models\Informasi;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -68,9 +69,10 @@ class ClientController extends Controller
         $tentang = Tentang::first();
         $alamat = Alamat::first();
         $desa = Desa::first();
+        $kateg = Kategori::all();
         
-        $info = Informasi::orderBy('id', 'DESC')->simplePaginate(10);
-        return view('Client/informasi', compact('nama','tentang','alamat', 'desa', 'info'));
+        $info = Informasi::orderBy('id', 'DESC')->simplePaginate(4);
+        return view('Client/informasi', compact('nama','tentang','alamat', 'desa', 'info', 'kateg'));
     }
     public function baca_info($id)
     {

@@ -9,7 +9,7 @@
             <section class="section">
                 <!-- MAIN OF CENTER CONTENT -->
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-8">
                         <div class="card">
                             <div class="card-header">
                                 <h4>Informasi</h4>
@@ -53,6 +53,38 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Kategori</h4>
+                            </div>
+                            <div class="card-body table-responsive">
+                                <button class="btn btn-block btn-outline-success mb-4" data-toggle="modal"
+                                    data-target="#tambahKategori">Tambah Kategori</button>
+                                <table class="table mt-4" id="table_kategori">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Kategori</th>
+                                            <th>Option</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @php $no1 = 1; @endphp
+                                        @foreach($kateg as $kt)
+                                        <tr>
+                                            <td>{{$no1++}}</td>
+                                            <td>{{$kt->kategori}}</td>
+                                            <td>
+                                                <a href="" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <!-- END OF CENTER CONTENT -->
@@ -84,8 +116,43 @@
                                 <input type="text" class="form-control" name="judul" placeholder="Judul Informasi">
                             </div>
                             <div class="form-group">
+                                <label>Kategori</label>
+                                <select name="kategori" class="form-control">
+                                    <option disabled selected value>Pilih Kategori</option>
+                                    @foreach($kateg as $ktg)
+                                    <option value="{{$ktg->kategori}}">{{$ktg->kategori}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label>Isi Informasi</label>
                                 <textarea name="isi" class="form-control" id="edit2" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="tambahKategori" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Tambah Kategori</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="{{route('upload_kategori')}}" method="post">
+                        @csrf
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Kategori</label>
+                                <input type="text" class="form-control" name="kategori" placeholder="Kategori">
                             </div>
                         </div>
                         <div class="modal-footer">

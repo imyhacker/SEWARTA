@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Tag;
 use App\Models\Berita;
+use App\Models\Kategori;
 use App\Models\Informasi;
 use Illuminate\Http\Request;
+use Whoops\Run;
 
 class ArtikelController extends Controller
 {
@@ -40,6 +42,11 @@ class ArtikelController extends Controller
         $data = Tag::create($request->all());
         return redirect()->back()->with('success', 'Tag Baru Berhasil Di Tambahkan');
 
+    }
+    public function upload_kategori(Request $request)
+    {
+        $data = Kategori::create($request->all());
+        return redirect()->back()->with('success', 'Kategori Baru Berhasil Di Tambahkan');
     }
     public function hapus_berita($id)
     {
@@ -88,13 +95,15 @@ class ArtikelController extends Controller
     public function informasi()
     {
         $data = Informasi::orderBy('id', 'DESC')->get();
-        return view('Dashboard/informasi/index', compact('data'));
+        $kateg = Kategori::all();
+        return view('Dashboard/informasi/index', compact('data', 'kateg'));
     }
     public function upload_informasi(Request $request)
     {
         $request->validate([
             'judul' => 'required',
             'isi'   => 'required',
+            'kategori' => 'required',
             'gambar_informasi' => 'required|mimes:jpeg,jpg,png,svg'
         ]);
         $gambar = $request->file('gambar_informasi');
@@ -104,6 +113,7 @@ class ArtikelController extends Controller
         $data = Informasi::create([
             'judul' => $request->judul,
             'isi'   => $request->isi,
+            'kategori' => $request->kategori,
             'gambar_informasi' => $nama_file
         ]);
         return redirect()->back()->with('success', 'Informasi Berhasil Di Upload');
@@ -118,7 +128,8 @@ class ArtikelController extends Controller
     public function edit_informasi($id)
     {
         $data = Informasi::find($id);
-        return view('Dashboard/informasi/edit', compact('data'));
+        $kateg = Kategori::all();
+        return view('Dashboard/informasi/edit', compact('data', 'kateg'));
     }
     public function update_informasi(Request $request, $id)
     {

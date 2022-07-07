@@ -34,6 +34,8 @@
 <script>
     CKEDITOR.replace('edit1');
    CKEDITOR.replace('edit2');
+   CKEDITOR.replace('edit3');
+
 </script>
   <script>
 
@@ -45,6 +47,8 @@
         ]
     } );
     $('#table_tag').DataTable();
+    $('#table_kategori').DataTable();
+
   } );
   </script>
 </body>

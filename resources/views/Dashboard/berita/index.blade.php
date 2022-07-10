@@ -17,7 +17,25 @@
                                 <h4>Daftar Berita</h4>
                             </div>
                             <div class="card-body table-responsive">
-                                <button class="btn btn-outline-success btn-block mb-4" data-toggle="modal"
+                            <form action="{{route('cari_tanggal_berita')}}" method="POST">
+                                    @csrf
+                                    
+                                <div class="row">
+                                    <div class="col-md-6 mt-3">
+                                        <label>Tanggal Awal</label>
+                                        <input type="date" name="tanggal_awal" class="form-control" require>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                    <label>Tanggal Akhir</label>
+
+                                    <input type="date" name="tanggal_akhir" class="form-control" require>
+                                    </div>
+                                    <div class="col-md-12 mt-3">
+                                        <input type="submit" class="btn btn-outline-danger btn-block" value="Cari Data">
+                                    </div>
+                                </div>
+                                </form>
+                                <button class="btn btn-outline-success btn-block mb-4 mt-4" data-toggle="modal"
                                     data-target="#tambahBerita">Tambah Berita</button>
 
                                 <table class="table mt-5" id="table_id">

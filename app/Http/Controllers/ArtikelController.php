@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Whoops\Run;
+use Carbon\Carbon;
 use App\Models\Tag;
 use App\Models\Berita;
 use App\Models\Kategori;
 use App\Models\Informasi;
 use Illuminate\Http\Request;
-use Whoops\Run;
 
 class ArtikelController extends Controller
 {
@@ -151,5 +152,77 @@ class ArtikelController extends Controller
         ]);
         return redirect()->back()->with('success', 'Informasi Berhasil Di Update Dengan Gambar');
        }
+    }
+    public function cari_tanggal(Request $request)
+    {
+        $request->validate([
+            'tanggal_awal' => 'required',
+            'tanggal_akhir' => 'required',
+        ]);
+        $tgl_a = $request->tanggal_awal;
+        $tgl_ak = $request->tanggal_akhir;
+        if($tgl_a == null || $tgl_ak == null){
+            return redirect()->back()->with('gagal', 'Tidak ada informasi pada tanggal tersebut');
+
+        }elseif ($tgl_a == null || $tgl_ak !== null) {
+            return redirect()->back()->with('gagal', 'Tidak ada informasi pada tanggal tersebut');
+
+        }elseif ($tgl_a !== null || $tgl_ak == null) {
+            return redirect()->back()->with('gagal', 'Tidak ada informasi pada tanggal tersebut');
+
+        }else{
+            $startDate = Carbon::createFromFormat('Y-m-d', $request->tanggal_awal);
+$endDate = Carbon::createFromFormat('Y-m-d', $request->tanggal_akhir);
+        $kateg = Kategori::all();
+$data = Informasi::whereBetween('created_at', [$startDate, $endDate])->get();
+        if($data == NULL){
+            $data = '';
+            $kateg = Kategori::all();
+
+            return view('Dashboard/informasi/index', compact('data', 'kateg'));
+
+        }else{
+            return view('Dashboard/informasi/index', compact('data', 'kateg'));
+
+        }
+        }
+        
+
+    }
+    public function cari_tanggal_berita(Request $request)
+    {
+        $request->validate([
+            'tanggal_awal' => 'required',
+            'tanggal_akhir' => 'required',
+        ]);
+        $tgl_a = $request->tanggal_awal;
+        $tgl_ak = $request->tanggal_akhir;
+        if($tgl_a == null || $tgl_ak == null){
+            return redirect()->back()->with('gagal', 'Tidak ada Berita pada tanggal tersebut');
+
+        }elseif ($tgl_a == null || $tgl_ak !== null) {
+            return redirect()->back()->with('gagal', 'Tidak ada Berita pada tanggal tersebut');
+
+        }elseif ($tgl_a !== null || $tgl_ak == null) {
+            return redirect()->back()->with('gagal', 'Tidak ada Berita pada tanggal tersebut');
+
+        }else{
+            $startDate = Carbon::createFromFormat('Y-m-d', $request->tanggal_awal);
+$endDate = Carbon::createFromFormat('Y-m-d', $request->tanggal_akhir);
+        $kateg = Kategori::all();
+$data = Berita::whereBetween('created_at', [$startDate, $endDate])->get();
+        if($data == NULL){
+            $data = '';
+            $kateg = Kategori::all();
+
+            return view('Dashboard/informasi/index', compact('data', 'kateg'));
+
+        }else{
+            return view('Dashboard/informasi/index', compact('data', 'kateg'));
+
+        }
+        }
+        
+
     }
 }

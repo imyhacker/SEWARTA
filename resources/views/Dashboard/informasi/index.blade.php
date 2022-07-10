@@ -15,7 +15,25 @@
                                 <h4>Informasi</h4>
                             </div>
                             <div class="card-body">
-                                <button class="btn btn-block btn-outline-success mb-4" data-toggle="modal"
+                                <form action="{{route('cari_tanggal')}}" method="POST">
+                                    @csrf
+                                    
+                                <div class="row">
+                                    <div class="col-md-6 mt-3">
+                                        <label>Tanggal Awal</label>
+                                        <input type="date" name="tanggal_awal" class="form-control" require>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                    <label>Tanggal Akhir</label>
+
+                                    <input type="date" name="tanggal_akhir" class="form-control" require>
+                                    </div>
+                                    <div class="col-md-12 mt-3">
+                                        <input type="submit" class="btn btn-outline-danger btn-block" value="Cari Data">
+                                    </div>
+                                </div>
+                                </form>
+                                <button class="btn btn-block btn-outline-success mb-4 mt-4" data-toggle="modal"
                                     data-target="#tambahInformasi">Tambah Informasi</button>
                                 <table class="table mt-4" id="table_id">
                                     <thead>

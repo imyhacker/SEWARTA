@@ -45,6 +45,9 @@ Route::group(['prefix' => 'home/jurnal/berita'], function($id = null){
     Route::get('/{id}/hapus_tag', [ArtikelController::class, 'hapus_tag'])->name('hapus_tag', $id);
     Route::get('/{id}/edit_berita', [ArtikelController::class, 'edit_berita'])->name('edit_berita', $id);
     Route::post('/{id}/edit_berita/update', [ArtikelController::class, 'update_berita'])->name('update_berita', $id);
+    Route::get('/laporan', [ArtikelController::class, 'laporan'])->name('laporan');
+    Route::get('/laporan/cari_tanggal_berita', [ArtikelController::class, 'cari_tanggal_berita'])->name('cari_tanggal_berita');
+
 });
 
 Route::group(['prefix' => 'home/jurnal/informasi'], function($id = null){
@@ -53,8 +56,6 @@ Route::group(['prefix' => 'home/jurnal/informasi'], function($id = null){
     Route::get('/{id}/hapus_informasi', [ArtikelController::class, 'hapus_informasi'])->name('hapus_informasi', $id);
     Route::get('/{id}/edit_informasi', [ArtikelController::class, 'edit_informasi'])->name('edit_informasi', $id);
     Route::post('/{id}/edit_informasi/update', [ArtikelController::class, 'update_informasi'])->name('update_informasi', $id);
-    Route::post('/informasi/cari_tanggal', [ArtikelController::class, 'cari_tanggal'])->name('cari_tanggal');
-    Route::post('/informasi/cari_tanggal_berita', [ArtikelController::class, 'cari_tanggal_berita'])->name('cari_tanggal_berita');
 
 });
 

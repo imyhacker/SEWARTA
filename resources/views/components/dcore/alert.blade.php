@@ -64,7 +64,6 @@ Toast.fire({
 })
 </script>
 
-
 @elseif($errors->any())
 
 <script>

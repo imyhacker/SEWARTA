@@ -14,19 +14,20 @@
                     <li class=active><a class="nav-link" href="{{url('/home')}}">Dashboard</a></li>
                 </ul>
             </li>
-
             <li class="menu-header">Stisla</li>
-            <li class="dropdown">
+ 
+            <li class="dropdown active">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Komponen
                         Jurnal</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-lin beep beep-sidebar" href="{{route('berita')}}">Berita</a></li>
                     <li><a class="nav-link beep beep-sidebar" href="{{route('informasi')}}">Informasi</a></li>
+                    <li><a class="nav-link beep beep-sidebar" href="{{route('laporan')}}">Laporan</a></li>
 
                 </ul>
             </li>
 
-            <li class="dropdown">
+            <li class="dropdown active">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-plug"></i> <span>Setting</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" data-toggle="modal" href="#" data-target="#namaAplikasi" type="button">Nama

@@ -36,19 +36,13 @@
 				<a class="nav-link" href="{{route('index')}}">Beranda</a>
 			  </li>
 			   <li class="nav-item"><a class="nav-link" href="{{route('tentang')}}">Tentang Kami</a></li>
-
-			    <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="department.html" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Jurnal <i class="icofont-thin-down"></i></a>
-					<ul class="dropdown-menu" aria-labelledby="dropdown02">
-						<li><a class="dropdown-item" href="{{route('semua_berita')}}">Berita</a></li>
-						<li><a class="dropdown-item" href="{{route('semua_informasi')}}">Informasi</a></li>
-					</ul>
-			  	</li>
+			   <li class="nav-item"><a class="nav-link" href="{{route('semua_berita')}}">Berita</a></li>
+			   <li class="nav-item"><a class="nav-link" href="{{route('semua_informasi')}}">Informasi</a></li>
 
 				@Auth
 			   <li class="nav-item"><a class="nav-link" href="{{url('/home')}}">Dashboard</a></li>
 			   @guest
-			   <li class="nav-item"><a class="nav-link" href="{{url('/login')}}">Sign In</a></li>
+			   <li class="nav-item"><a class="nav-link" href="{{url('/login')}}">Login</a></li>
 			   @endguest
 			   @endauth
 			</ul>

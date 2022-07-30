@@ -18,7 +18,7 @@
                             </div>
                             <div class="card-body table-responsive">
                            
-                                <button class="btn btn-outline-success btn-block mb-4 mt-4" data-toggle="modal"
+                                <button class="btn btn-outline-success btn-block mb-4" data-toggle="modal"
                                     data-target="#tambahBerita">Tambah Berita</button>
 
                                 <table class="table mt-5" id="table_id">

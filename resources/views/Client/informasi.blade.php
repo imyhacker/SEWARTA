@@ -39,8 +39,9 @@
                     <div class="container">
                         <div class="row">
                             @foreach($info as $f)
-
                             <div class="col-md-6 mt-4">
+                                <a href="{{route('baca_info', $f->id)}}">
+
                                 <div class="card text-white bg-primary mb-3">
                                     <div class="card-body">
                                         <h5 class="card-title text-white">{{$f->judul}}</h5>
@@ -55,6 +56,8 @@
                                         <p class="card-text">{!! Str::limit($f->isi, 100, '...') !!}</p>
                                     </div>
                                 </div>
+                            </a>
+
                             </div>
                             @endforeach
 

@@ -57,7 +57,9 @@
 </div>
 </div>
 </div>
-
+<div class="mt-5 text-muted text-center">
+    Don't have an account? <a href="{{url('/register')}}">Create One</a>
+</div>
 <x-footer />
 
 @stop

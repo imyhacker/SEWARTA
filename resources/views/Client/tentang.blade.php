@@ -1,6 +1,6 @@
 <x-client.head />
 <body id="top">
-<x-client.header :alamat="$alamat" :nama="$nama" />
+<x-client.header :alamat="$alamat" :kategori="$kategori" :nama="$nama" />
 <style>
     .bg-1 {
   background: url("{{asset('depan/depan.jpg')}}") no-repeat 50% 50%;
@@ -30,7 +30,7 @@
 				<h2 class="title-color">Siapa Kami ? Dan Apa Visi Misi Kami</h2>
 			</div>
 			<div class="col-lg-8">
-				<p>{!! $tentang->tentang !!}</p>
+				<p>{!! $tentang->tentang ?? 'Tidak ada data '!!}</p>
 			</div>
 		</div>
 	</div>

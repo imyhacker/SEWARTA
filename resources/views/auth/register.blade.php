@@ -59,5 +59,8 @@
                 </form>
               </div>
             </div>
+            <div class="mt-5 text-muted text-center">
+    Have an account? <a href="{{url('/login')}}">Login Here !</a>
+</div>
             <x-footer />
           @stop

@@ -23,7 +23,22 @@ class ClientController extends Controller
         $kategori = Kategori::all();
         $tb = Berita::count();
         $ti = Informasi::count();
+        //dd($kategori);
         return view('Client/index', compact('nama', 'tentang', 'alamat', 'tb', 'ti', 'desa', 'kategori'));
+        
+    }
+    public function kategori($kategori)
+    {
+
+        $info = Informasi::where('kategori', $kategori)->get();
+        $nama = Aplikasi::first();
+        $tentang = Tentang::first();
+        $alamat = Alamat::first();
+        $desa = Desa::first();
+        $kateg = Kategori::where('kategori', $kategori)->first();;
+        $kategori = Kategori::all();
+
+        return view('Client/informasi', compact('nama','tentang','alamat', 'desa', 'info', 'kateg', 'kategori'));
     }
     public function tentang()
     {
@@ -31,8 +46,9 @@ class ClientController extends Controller
         $tentang = Tentang::first();
         $alamat = Alamat::first();
         $desa = Desa::first();
+        $kategori = Kategori::all();
 
-        return view('Client/tentang', compact('nama', 'tentang', 'alamat', 'desa'));
+        return view('Client/tentang', compact('nama', 'tentang', 'alamat', 'desa', 'kategori'));
 
     }
     public function berita()
@@ -42,10 +58,11 @@ class ClientController extends Controller
         $alamat = Alamat::first();
         $desa = Desa::first();
         $berita = Berita::orderBy('id', 'DESC')->simplePaginate(3);
+        $kategori = Kategori::all();
 
         $tag = Tag::all();
         $ps = Berita::orderBy('id', 'DESC')->limit(5)->get();
-        return view('Client/berita', compact('nama', 'tentang', 'alamat', 'desa', 'berita', 'tag', 'ps'));
+        return view('Client/berita', compact('nama', 'tentang', 'alamat', 'desa', 'berita', 'tag', 'ps', 'kategori'));
     }
     public function baca($id)
     {
@@ -54,14 +71,15 @@ class ClientController extends Controller
         $alamat = Alamat::first();
         $desa = Desa::first();
         $berita = Berita::find($id);
-        
+        $kategori = Kategori::all();
+
         $tag = Tag::all();
         $ps = Berita::orderBy('id', 'DESC')->limit(5)->get();
 
         $tam = Berita::find($id)->update([
             'viewer' => $berita->viewer + 1
         ]);
-        return view('Client/baca', compact('nama','tentang','alamat', 'desa', 'berita', 'tag', 'ps'));
+        return view('Client/baca', compact('nama','tentang','alamat', 'desa', 'berita', 'tag', 'ps','kategori'));
     }
     public function informasi()
     {
@@ -70,9 +88,10 @@ class ClientController extends Controller
         $alamat = Alamat::first();
         $desa = Desa::first();
         $kateg = Kategori::all();
-        
+        $kategori = Kategori::all();
+
         $info = Informasi::orderBy('id', 'DESC')->simplePaginate(4);
-        return view('Client/informasi', compact('nama','tentang','alamat', 'desa', 'info', 'kateg'));
+        return view('Client/informasi', compact('nama','tentang','alamat', 'desa', 'info', 'kateg', 'kategori'));
     }
     public function baca_info($id)
     {
@@ -81,10 +100,11 @@ class ClientController extends Controller
         $alamat = Alamat::first();
         $desa = Desa::first();
         $info = Informasi::find($id);
-        
+        $kategori = Kategori::all();
+
         $tam = Informasi::find($id)->update([
             'viewer' => $info->viewer + 1
         ]);
-        return view('Client/baca_info', compact('nama','tentang','alamat', 'desa', 'info'));
+        return view('Client/baca_info', compact('nama','tentang','alamat', 'desa', 'info', 'kategori'));
     }
 }

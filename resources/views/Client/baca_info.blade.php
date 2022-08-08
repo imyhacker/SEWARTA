@@ -1,7 +1,7 @@
 <x-client.head />
 
 <body id="top">
-    <x-client.header :alamat="$alamat"  :nama="$nama" />
+    <x-client.header :alamat="$alamat" :kategori="$kategori" :nama="$nama" />
     <style>
         .bg-1 {
             background: url("{{asset('depan/depan.jpg')}}") no-repeat 50% 50%;

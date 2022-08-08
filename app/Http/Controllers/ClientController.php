@@ -20,10 +20,10 @@ class ClientController extends Controller
         $tentang = Tentang::first();
         $alamat = Alamat::first();
         $desa = Desa::first();
-
+        $kategori = Kategori::all();
         $tb = Berita::count();
         $ti = Informasi::count();
-        return view('Client/index', compact('nama', 'tentang', 'alamat', 'tb', 'ti', 'desa'));
+        return view('Client/index', compact('nama', 'tentang', 'alamat', 'tb', 'ti', 'desa', 'kategori'));
     }
     public function tentang()
     {

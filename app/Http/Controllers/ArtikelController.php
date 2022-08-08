@@ -184,6 +184,7 @@ class ArtikelController extends Controller
         $data = Berita::orderBy('id', 'DESC')->get();
         $data2 = Tag::all();
         return view('Dashboard/berita/laporan', compact('data', 'data2'));
+        
     }
 }
 

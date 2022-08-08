@@ -37,8 +37,19 @@
 			  </li>
 			   <li class="nav-item"><a class="nav-link" href="{{route('tentang')}}">Tentang Kami</a></li>
 			   <li class="nav-item"><a class="nav-link" href="{{route('semua_berita')}}">Berita</a></li>
-			   <li class="nav-item"><a class="nav-link" href="{{route('semua_informasi')}}">Informasi</a></li>
-
+			   <li class="nav-item">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+					  Informasi
+					</a>
+					<div class="dropdown-menu">
+						@foreach($kategori as $k)
+					  <a class="dropdown-item" href="#">Action</a>
+					  @endforeach
+					</div>
+				  </li>
+			
+			   </li>
 				@Auth
 			   <li class="nav-item"><a class="nav-link" href="{{url('/home')}}">Dashboard</a></li>
 			   @guest

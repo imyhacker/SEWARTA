@@ -103,7 +103,7 @@
                     <div class="form-group">
 
                         <label>Nomor Hp</label>
-                        <input type="number" class="form-control" name="nomor_hp" placeholder="+62xxxxxxxxx">
+                        <input type="number" class="form-control" name="nomor_hp" placeholder="62xxxxxxxxx">
                     </div>
                     <div class="form-group">
 

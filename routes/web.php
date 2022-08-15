@@ -25,8 +25,9 @@ Route::group(['prefix' => '/'], function($id = null, $kategori = null){
     Route::get('/', [ClientController::class, 'index'])->name('index');
     Route::get('/tentang', [ClientController::class, 'tentang'])->name('tentang');
     Route::get('/berita', [ClientController::class, 'berita'])->name('semua_berita');
+    Route::get('/kontak', [ClientController::class, 'kontak'])->name('kontak');
     Route::get('/berita/{id}/baca', [ClientController::class, 'baca'])->name('baca', $id);
-    Route::get('/informasi', [ClientController::class, 'informasi'])->name('semua_informasi');
+    Route::get('/semua_informasi', [ClientController::class, 'semua_informasi'])->name('semua_informasi');
     Route::get('/informasi/{id}/baca', [ClientController::class, 'baca_info'])->name('baca_info', $id);
     Route::get('/kategori/{kategori}', [ClientController::class, 'kategori'])->name('kate', $kategori);
 

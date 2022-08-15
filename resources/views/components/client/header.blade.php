@@ -54,7 +54,8 @@
                     </li>
 
                     </li>
-                    </ <li class="nav-item"><a class="nav-link" href="{{route('semua_berita')}}">Berita</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{route('semua_berita')}}">Berita</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{route('semua_berita')}}">Kontak</a></li>
 
                     @Auth
                     <li class="nav-item"><a class="nav-link" href="{{url('/home')}}">Dashboard</a></li>

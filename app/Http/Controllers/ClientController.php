@@ -93,6 +93,29 @@ class ClientController extends Controller
         $info = Informasi::orderBy('id', 'DESC')->simplePaginate(4);
         return view('Client/informasi', compact('nama','tentang','alamat', 'desa', 'info', 'kateg', 'kategori'));
     }
+    public function kontak()
+    {
+        $nama = Aplikasi::first();
+        $tentang = Tentang::first();
+        $alamat = Alamat::first();
+        $desa = Desa::first();
+        $kateg = Kategori::all();
+        $kategori = Kategori::all();
+
+        return view('Client/kontak', compact('nama','tentang','alamat', 'desa', 'kateg', 'kategori'));
+    }
+    public function semua_informasi()
+    {
+        $nama = Aplikasi::first();
+        $tentang = Tentang::first();
+        $alamat = Alamat::first();
+        $desa = Desa::first();
+        $kateg = Kategori::all();
+        $kategori = Kategori::all();
+
+        $info = Informasi::orderBy('id', 'DESC')->simplePaginate(4);
+        return view('Client/semua_informasi', compact('nama','tentang','alamat', 'desa', 'info', 'kateg', 'kategori'));
+    }
     public function baca_info($id)
     {
         $nama = Aplikasi::first();

@@ -14,7 +14,7 @@
                     <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
                         <a href="tel:+{{$alamat->nomor_hp ?? ''}}">
                             <span>Call Now : </span>
-                            <span class="h4">+{{$alamat->nomor_hp ?? ''}}</span>
+                            <span class="h4">{{$alamat->nomor_hp ?? ''}}</span>
                         </a>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
 
                     </li>
                      <li class="nav-item"><a class="nav-link" href="{{route('semua_berita')}}">Berita</a></li>
-                     <li class="nav-item"><a class="nav-link" href="{{route('semua_berita')}}">Kontak</a></li>
+                     <li class="nav-item"><a class="nav-link" href="https://api.whatsapp.com/send?phone={{$alamat->nomor_hp ?? ''}}&text=Halo%20Saya%20Ingin%20Bertanya%20Nih">Kontak</a></li>
 
                     @Auth
                     <li class="nav-item"><a class="nav-link" href="{{url('/home')}}">Dashboard</a></li>

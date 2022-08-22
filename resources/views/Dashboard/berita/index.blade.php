@@ -125,7 +125,7 @@
                                 <input type="text" class="form-control" name="judul" placeholder="Judul Berita">
                             </div>
                             <div class="form-group">
-                                <label>Judul Berita</label>
+                                <label>TAG</label>
                                 <select name="tag" class="form-control" id="">
                                   <option disabled selected value>Pilih Tag</option>
                                   @foreach($data2 as $datatag)

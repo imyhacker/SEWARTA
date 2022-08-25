@@ -55,7 +55,7 @@
 
                     </li>
                      <li class="nav-item"><a class="nav-link" href="{{route('semua_berita')}}">Berita</a></li>
-                     <li class="nav-item"><a class="nav-link" href="https://api.whatsapp.com/send?phone={{$alamat->nomor_hp ?? ''}}&text=Halo%20Saya%20Ingin%20Bertanya%20Nih">Kontak</a></li>
+                     <li class="nav-item"><a class="nav-link" href="https://api.whatsapp.com/send?phone={{$alamat->nomor_hp ?? ''}}&text=Halo%20Saya%20Ingin%20Menyampaikan%20Berita%20Nih">Kontak</a></li>
 
                     @Auth
                     <li class="nav-item"><a class="nav-link" href="{{url('/home')}}">Dashboard</a></li>

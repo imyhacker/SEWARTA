@@ -1,3 +1,3 @@
 <div class="simple-footer">
-              Copyright &copy; Stisla 2018
-            </div>
+  &copy; Copyright Reserved to <span class="text-color">AMIK PN</span>
+</div>

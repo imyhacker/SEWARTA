@@ -125,9 +125,9 @@
                                 <input type="text" class="form-control" name="judul" placeholder="Judul Berita">
                             </div>
                             <div class="form-group">
-                                <label>TAG</label>
+                                <label>Tag Berita</label>
                                 <select name="tag" class="form-control" id="">
-                                  <option disabled selected value>Pilih Tag</option>
+                                  <option disabled selected value>Pilih Tag Berita</option>
                                   @foreach($data2 as $datatag)
                                     <option value="{{$datatag->tag}}">{{$datatag->tag}}</option>
                                     @endforeach

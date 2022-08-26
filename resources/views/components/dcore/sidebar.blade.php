@@ -1,7 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
+            <a href="index.html">E-WARTA</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.html">St</a>
@@ -14,7 +14,7 @@
                     <li class=active><a class="nav-link" href="{{url('/home')}}">Dashboard</a></li>
                 </ul>
             </li>
-            <li class="menu-header">Stisla</li>
+            <li class="menu-header">E-WARTA</li>
  
             <li class="dropdown active">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Komponen
@@ -40,13 +40,18 @@
                             Desa</a></li>
                 </ul>
             </li>
+
+            <li class="dropdown active">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-user"></i> <span>Akun</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link beep beep-sidebar" href="{{route('semua_akun')}}">Semua Data Akun</a></li>
+                    <li><a class="nav-link beep beep-sidebar" href="{{route('akunku')}}">Akun Saya</a></li>
+                    
+                </ul>
+            </li>
         </ul>
 
-        <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-            <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
-                <i class="fas fa-rocket"></i> Documentation
-            </a>
-        </div>
+       
     </aside>
 </div>
 

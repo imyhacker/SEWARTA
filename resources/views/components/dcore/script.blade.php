@@ -48,6 +48,7 @@
     } );
     $('#table_tag').DataTable();
     $('#table_kategori').DataTable();
+    $('#table_akun').DataTable();
 
   } );
   </script>

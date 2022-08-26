@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AkunController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClientController;
@@ -66,4 +67,12 @@ Route::group(['prefix' => 'home/setting'], function(){
     Route::post('/upload_alamat', [SettingController::class, 'upload_alamat'])->name('upload_alamat');
     Route::post('/upload_tentang', [SettingController::class, 'upload_tentang'])->name('upload_tentang');
     Route::post('/upload_desa', [SettingController::class, 'upload_desa'])->name('upload_desa');
+});
+
+Route::group(['prefix' => 'home/akun'], function($id = null){
+    Route::get('/semua_akun', [AkunController::class, 'index'])->name('semua_akun');
+    Route::post('/semua_akun/tambah', [AkunController::class, 'tambah_akun'])->name('tambah_akun');
+    Route::get('/semua_akun/{id}/hapus', [AkunController::class, 'hapus'])->name('hapus_akun', $id);
+    Route::get('/akunku', [AkunController::class, 'akunku'])->name('akunku');
+    Route::post('/akunku/update', [AkunController::class, 'update_akun'])->name('update_akun');
 });

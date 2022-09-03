@@ -19,10 +19,8 @@
 					<div class="divider mb-3"></div>
 					<span class="text-uppercase text-sm letter-spacing ">Informasi Desa {{$desa->desa ?? "Belum ada nama desa"}}</span>
 					<h1 class="mb-3 mt-3">{{$nama->nama_aplikasi ?? config('app.name')}}</h1>
-					
-					<p class="mb-4 pr-5">{!! Str::limit($tentang->tentang ?? "Masih Kosong", 100, '...')  !!}</p>
-					<div class="btn-container ">
-						<a href="{{route('tentang')}}" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">Baca Selengkapnya <i class="icofont-simple-right ml-2  "></i></a>
+					<div class="btn-container mt-3">
+						<a href="https://api.whatsapp.com/send?phone={{$alamat->nomor_hp ?? ''}}&text=Halo%20Saya%20Ingin%20Menyampaikan%20Berita%20Nih" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">Hubungi Kami<i class="icofont-simple-right ml-2  "></i></a>
 					</div>
 				</div>
 			</div>

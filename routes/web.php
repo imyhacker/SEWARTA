@@ -34,7 +34,7 @@ Route::group(['prefix' => '/'], function($id = null, $kategori = null){
 
 });
 
-Auth::routes(['register'=>true]);
+Auth::routes(['register'=>false]);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
@@ -44,6 +44,7 @@ Route::group(['prefix' => 'home/jurnal/berita'], function($id = null){
     Route::post('/upload_berita', [ArtikelController::class, 'upload_berita'])->name('upload_berita');
     Route::post('/upload_tag', [ArtikelController::class, 'upload_tag'])->name('upload_tag');
     Route::post('/upload_kategori', [ArtikelController::class, 'upload_kategori'])->name('upload_kategori');
+    Route::get('/{id}/hapus_kategori', [ArtikelController::class, 'hapus_kategori'])->name('hapus_kategori', $id);
     Route::get('/{id}/hapus_berita', [ArtikelController::class, 'hapus_berita'])->name('hapus_berita', $id);
     Route::get('/{id}/hapus_tag', [ArtikelController::class, 'hapus_tag'])->name('hapus_tag', $id);
     Route::get('/{id}/edit_berita', [ArtikelController::class, 'edit_berita'])->name('edit_berita', $id);

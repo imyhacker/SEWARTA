@@ -76,7 +76,7 @@
                                             <td>{{$no1++}}</td>
                                             <td>{{$kt->kategori}}</td>
                                             <td>
-                                                <a href="" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                                <a href="{{route('hapus_kategori', $kt->id)}}" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach

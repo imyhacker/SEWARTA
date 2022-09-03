@@ -186,5 +186,11 @@ class ArtikelController extends Controller
         return view('Dashboard/berita/laporan', compact('data', 'data2'));
         
     }
+    public function hapus_kategori($id)
+    {
+        $data = Kategori::find($id);
+        $data->delete();
+        return redirect()->back()->with('info', 'Kategori berhasil di hapus');
+    }
 }
 

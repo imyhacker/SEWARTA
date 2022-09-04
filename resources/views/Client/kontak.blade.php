@@ -57,9 +57,7 @@
 }
 
 					</style>
-					<div class="iframe-container mb-4">
-						<iframe src="https://maps.google.com/maps?q=Tegalurung&t=k&z=13&ie=UTF8&iwloc=&output=embed" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-					</div>
+					
                 </div>
                 
                 <div class="col-md-12 mt-4">
@@ -69,7 +67,7 @@
                         <a href="mailto:{{$alamat->email ?? ''}}" class="btn btn-danger btn-block w-100"><i class="fas fa-facebook"></i> Chat Email <i class="icofont-email"></i></a>
                         </div>
                         <div class="col-md-6 mt-3">
-                        <a href="https://wa.me/+{{$alamat->nomor_hp ?? '00000000000'}}" class="btn btn-success btn-block w-100"><i class="fas fa-facebook"></i> Chat Whatsapp <i class="icofont-whatsapp"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone={{$alamat->nomor_hp ?? ''}}&text=Halo%20Saya%20Ingin%20Menyampaikan%20Berita%20Nih" class="btn btn-success btn-block w-100"><i class="fas fa-facebook"></i> Chat Whatsapp <i class="icofont-whatsapp"></i></a>
 
                         </div>
                     </div>

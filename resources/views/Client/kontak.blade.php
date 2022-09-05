@@ -63,10 +63,8 @@
                 <div class="col-md-12 mt-4">
                     <div class="row">
                         
-                        <div class="col-md-6 mt-3">
-                        <a href="mailto:{{$alamat->email ?? ''}}" class="btn btn-danger btn-block w-100"><i class="fas fa-facebook"></i> Chat Email <i class="icofont-email"></i></a>
-                        </div>
-                        <div class="col-md-6 mt-3">
+                       
+                        <div class="col-md-12 mt-3">
                         <a href="https://api.whatsapp.com/send?phone={{$alamat->nomor_hp ?? ''}}&text=Halo%20Saya%20Ingin%20Menyampaikan%20Berita%20Nih" class="btn btn-success btn-block w-100"><i class="fas fa-facebook"></i> Chat Whatsapp <i class="icofont-whatsapp"></i></a>
 
                         </div>

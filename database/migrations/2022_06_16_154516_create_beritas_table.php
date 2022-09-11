@@ -18,6 +18,8 @@ return new class extends Migration
             $table->longText('gambar_berita')->nullable();
             $table->string('judul');
             $table->string('tag');
+            $table->string('kategori');
+            $table->longText('sub');
             $table->longText('isi');
             $table->integer('viewer')->default('0');
             $table->timestamps();

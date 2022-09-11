@@ -54,14 +54,14 @@ Route::group(['prefix' => 'home/jurnal/berita'], function($id = null){
 
 });
 
-Route::group(['prefix' => 'home/jurnal/informasi'], function($id = null){
-    Route::get('/', [ArtikelController::class, 'informasi'])->name('informasi');
-    Route::post('/upload_informasi', [ArtikelController::class, 'upload_informasi'])->name('upload_informasi');
-    Route::get('/{id}/hapus_informasi', [ArtikelController::class, 'hapus_informasi'])->name('hapus_informasi', $id);
-    Route::get('/{id}/edit_informasi', [ArtikelController::class, 'edit_informasi'])->name('edit_informasi', $id);
-    Route::post('/{id}/edit_informasi/update', [ArtikelController::class, 'update_informasi'])->name('update_informasi', $id);
+// Route::group(['prefix' => 'home/jurnal/informasi'], function($id = null){
+//     Route::get('/', [ArtikelController::class, 'informasi'])->name('informasi');
+//     Route::post('/upload_informasi', [ArtikelController::class, 'upload_informasi'])->name('upload_informasi');
+//     Route::get('/{id}/hapus_informasi', [ArtikelController::class, 'hapus_informasi'])->name('hapus_informasi', $id);
+//     Route::get('/{id}/edit_informasi', [ArtikelController::class, 'edit_informasi'])->name('edit_informasi', $id);
+//     Route::post('/{id}/edit_informasi/update', [ArtikelController::class, 'update_informasi'])->name('update_informasi', $id);
 
-});
+// });
 
 Route::group(['prefix' => 'home/setting'], function(){
     Route::post('/upload_nama_aplikasi', [SettingController::class, 'upload_nama_aplikasi'])->name('upload_nama_aplikasi');

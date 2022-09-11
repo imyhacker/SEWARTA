@@ -21,7 +21,6 @@
                         Jurnal</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-lin beep beep-sidebar" href="{{route('berita')}}">Berita</a></li>
-                    <li><a class="nav-link beep beep-sidebar" href="{{route('informasi')}}">Informasi</a></li>
                     <li><a class="nav-link beep beep-sidebar" href="{{route('laporan')}}">Laporan</a></li>
 
                 </ul>

@@ -16,14 +16,17 @@ class ArtikelController extends Controller
     {
         $data = Berita::orderBy('id', 'DESC')->get();
         $data2 = Tag::all();
-        return view('Dashboard/berita/index', compact('data', 'data2'));
+        $kategori = Kategori::all();
+        return view('Dashboard/berita/index', compact('data', 'data2', 'kategori'));
     }
     public function upload_berita(Request $request)
     {
         $request->validate([
             'judul' => 'required',
             'tag'   => 'required',
+            'kategori' => 'required',
             'isi'   => 'required',
+            'sub'   => 'required',
             'gambar_berita' => 'required|mimes:jpeg,jpg,png,svg'
         ]);
         $gambar = $request->file('gambar_berita');
@@ -34,6 +37,9 @@ class ArtikelController extends Controller
             'judul' => $request->judul,
             'tag'   => $request->tag,
             'isi'   => $request->isi,
+            'kategori' => $request->kategori,
+            'sub'   => $request->sub,
+
             'gambar_berita' => $nama_file
         ]);
         return redirect()->back()->with('success', 'Berita Baru Berhasil Di Tambahkan');
@@ -75,6 +81,9 @@ class ArtikelController extends Controller
             'judul' => $request->judul,
             'tag'   => $request->tag,
             'isi'   => $request->isi,
+            'sub'   => $request->sub,
+
+            'kategori' => $request->kategori,
         ]);
         return redirect()->back()->with('success', 'Berita Berhasil Di Update Tanpa Gambar');
        }else{
@@ -85,6 +94,9 @@ class ArtikelController extends Controller
             'judul' => $request->judul,
             'tag'   => $request->tag,
             'isi'   => $request->isi,
+            'kategori' => $request->kategori,
+            'sub'   => $request->sub,
+
             'gambar_berita' => $nama_file
         ]);
         return redirect()->back()->with('success', 'Berita Berhasil Di Update Dengan Gambar');
@@ -93,66 +105,66 @@ class ArtikelController extends Controller
 
 
     // INFORMASI
-    public function informasi()
-    {
-        $data = Informasi::orderBy('id', 'DESC')->get();
-        $kateg = Kategori::all();
-        return view('Dashboard/informasi/index', compact('data', 'kateg'));
-    }
-    public function upload_informasi(Request $request)
-    {
-        $request->validate([
-            'judul' => 'required',
-            'isi'   => 'required',
-            'kategori' => 'required',
-            'gambar_informasi' => 'required|mimes:jpeg,jpg,png,svg'
-        ]);
-        $gambar = $request->file('gambar_informasi');
-        $nama_file = $gambar->getClientOriginalName();
-        $path = 'gambar_informasi';
-        $gambar->move($path, $nama_file);
-        $data = Informasi::create([
-            'judul' => $request->judul,
-            'isi'   => $request->isi,
-            'kategori' => $request->kategori,
-            'gambar_informasi' => $nama_file
-        ]);
-        return redirect()->back()->with('success', 'Informasi Berhasil Di Upload');
+    // public function informasi()
+    // {
+    //     $data = Informasi::orderBy('id', 'DESC')->get();
+    //     $kateg = Kategori::all();
+    //     return view('Dashboard/informasi/index', compact('data', 'kateg'));
+    // }
+    // public function upload_informasi(Request $request)
+    // {
+    //     $request->validate([
+    //         'judul' => 'required',
+    //         'isi'   => 'required',
+    //         'kategori' => 'required',
+    //         'gambar_informasi' => 'required|mimes:jpeg,jpg,png,svg'
+    //     ]);
+    //     $gambar = $request->file('gambar_informasi');
+    //     $nama_file = $gambar->getClientOriginalName();
+    //     $path = 'gambar_informasi';
+    //     $gambar->move($path, $nama_file);
+    //     $data = Informasi::create([
+    //         'judul' => $request->judul,
+    //         'isi'   => $request->isi,
+    //         'kategori' => $request->kategori,
+    //         'gambar_informasi' => $nama_file
+    //     ]);
+    //     return redirect()->back()->with('success', 'Informasi Berhasil Di Upload');
        
-    }
-    public function hapus_informasi($id)
-    {
-        $data = Informasi::find($id)->delete();
-        return redirect()->back()->with('success', 'Informasi Berhasil Di Hapus');
+    // }
+    // public function hapus_informasi($id)
+    // {
+    //     $data = Informasi::find($id)->delete();
+    //     return redirect()->back()->with('success', 'Informasi Berhasil Di Hapus');
 
-    }
-    public function edit_informasi($id)
-    {
-        $data = Informasi::find($id);
-        $kateg = Kategori::all();
-        return view('Dashboard/informasi/edit', compact('data', 'kateg'));
-    }
-    public function update_informasi(Request $request, $id)
-    {
-        $gambar = $request->file('gambar_informasi');
-       if(is_null($gambar)){
-        $data = Informasi::find($id)->update([
-            'judul' => $request->judul,
-            'isi'   => $request->isi,
-        ]);
-        return redirect()->back()->with('success', 'Informasi Berhasil Di Update Tanpa Gambar');
-       }else{
-        $nama_file = $gambar->getClientOriginalName();
-        $path = 'gambar_informasi';
-        $gambar->move($path, $nama_file);
-        $data = Informasi::find($id)->update([
-            'judul' => $request->judul,
-            'isi'   => $request->isi,
-            'gambar_informasi' => $nama_file
-        ]);
-        return redirect()->back()->with('success', 'Informasi Berhasil Di Update Dengan Gambar');
-       }
-    }
+    // }
+    // public function edit_informasi($id)
+    // {
+    //     $data = Informasi::find($id);
+    //     $kateg = Kategori::all();
+    //     return view('Dashboard/informasi/edit', compact('data', 'kateg'));
+    // }
+    // public function update_informasi(Request $request, $id)
+    // {
+    //     $gambar = $request->file('gambar_informasi');
+    //    if(is_null($gambar)){
+    //     $data = Informasi::find($id)->update([
+    //         'judul' => $request->judul,
+    //         'isi'   => $request->isi,
+    //     ]);
+    //     return redirect()->back()->with('success', 'Informasi Berhasil Di Update Tanpa Gambar');
+    //    }else{
+    //     $nama_file = $gambar->getClientOriginalName();
+    //     $path = 'gambar_informasi';
+    //     $gambar->move($path, $nama_file);
+    //     $data = Informasi::find($id)->update([
+    //         'judul' => $request->judul,
+    //         'isi'   => $request->isi,
+    //         'gambar_informasi' => $nama_file
+    //     ]);
+    //     return redirect()->back()->with('success', 'Informasi Berhasil Di Update Dengan Gambar');
+    //    }
+    // }
     
     public function cari_tanggal_berita(Request $request)
     {

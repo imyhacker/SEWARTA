@@ -39,7 +39,7 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="{{route('tentang')}}">Tentang Kami</a></li>
                     <li class="nav-item">
-                    <li class="nav-item dropdown">
+                    {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-expanded="false">
                             Informasi
@@ -51,7 +51,7 @@
                             <a class="dropdown-item" href="#">Tidak Ada Data</a>
                             @endforelse
                         </div>
-                    </li>
+                    </li> --}}
 
                     </li>
                      <li class="nav-item"><a class="nav-link" href="{{route('semua_berita')}}">Berita</a></li>

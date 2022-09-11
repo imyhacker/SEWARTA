@@ -71,7 +71,8 @@ class ArtikelController extends Controller
     {
         $data = Berita::find($id);
         $tag = Tag::all();
-        return view('Dashboard/berita/edit', compact('data', 'tag'));
+        $kategori = Kategori::all();
+        return view('Dashboard/berita/edit', compact('data', 'tag', 'kategori'));
     }
     public function update_berita(Request $request, $id)
     {

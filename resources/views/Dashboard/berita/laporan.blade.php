@@ -28,7 +28,7 @@
 
                                     <input type="date" name="tanggal_akhir" class="form-control" require>
                                     </div>
-                                    <div class="col-md-12 mt-3">
+                                    <div class="col-md-12 mt-3 mb-4">
                                         <input type="submit" class="btn btn-outline-danger btn-block" value="Cari Data">
                                     </div>
                                 </div>
@@ -41,6 +41,8 @@
                                             <th>No</th>
                                             <th>Judul Berita</th>
                                             <th>Tag</th>
+                                            <th>Kategori</th>
+                                            <th>Sub (Rangkuman)</th>
                                             <th>Viewer</th>
                                             <th>Tanggal Upload</th>
                                         </tr>
@@ -52,6 +54,8 @@
                                             <td>{{$no++}}</td>
                                             <td>{{$berita->judul}}</td>
                                             <td>{{$berita->tag}}</td>
+                                            <td>{{$berita->kategori}}</td>
+                                            <td>{{$berita->sub}}</td>
                                             <td>{{$berita->viewer}}</td>
                                             <td>{{$berita->created_at->format('d F Y')}}</td>
                                             

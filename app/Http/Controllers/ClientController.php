@@ -30,7 +30,7 @@ class ClientController extends Controller
     public function kategori($kategori)
     {
 
-        $info = Informasi::where('kategori', $kategori)->get();
+        $info = Berita::where('kategori', $kategori)->get();
         $nama = Aplikasi::first();
         $tentang = Tentang::first();
         $alamat = Alamat::first();
@@ -75,11 +75,12 @@ class ClientController extends Controller
 
         $tag = Tag::all();
         $ps = Berita::orderBy('id', 'DESC')->limit(5)->get();
-
+        $link = Kategori::where('kategori', $berita->kategori)->first();
         $tam = Berita::find($id)->update([
             'viewer' => $berita->viewer + 1
         ]);
-        return view('Client/baca', compact('nama','tentang','alamat', 'desa', 'berita', 'tag', 'ps','kategori'));
+        //dd($link->link);
+        return view('Client/baca', compact('link','nama','tentang','alamat', 'desa', 'berita', 'tag', 'ps','kategori'));
     }
     public function informasi()
     {

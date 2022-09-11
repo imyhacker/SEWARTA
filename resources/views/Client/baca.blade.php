@@ -40,12 +40,17 @@
                                     <div class="blog-item-meta mb-3 mt-4">
                                         <span class="text-black text-capitalize mr-3"><i
                                                 class="icofont-calendar mr-1"></i> {{$berita->created_at->diffForHumans()}}</span>
-                                    </div>
+                                                <span class="text-black text-capitalize mr-3"><i
+                                                    class="icofont-tag mr-1"></i>Tag : {{$berita->tag}}</span>
+                                                    <span class="text-black text-capitalize mr-3"><i
+                                                        class="icofont-book-mark mr-1"></i>Kategori : {{$berita->kategori}}</span>
+                                            </div>
 
                                     <h2 class="mt-3 mb-3">{{$berita->judul}}</h2>
 
                                     <p class="mb-4 text-justify">{!! $berita->isi !!}</p>
 
+                                    <p class="mt-5">Berita Ini Tertaut Pada Situs : <a href="{{$link->link}}">{{$link->link}}</a></p>
                                     <div class="row">
                         <div class="col-md-4 mt-3">
                             <a href="http://www.facebook.com/sharer.php?u={{url()->current()}}" target="_blank" class="btn btn-outline-info btn-block w-100"><i class="fas fa-share-alt"></i> Share Facebook <i class="icofont-share"></i></a>
@@ -65,7 +70,7 @@
                     </div>
                 </div>
                 
-               <x-client.side :tag="$tag" :ps="$ps"/>
+               <x-client.side :tag="$tag" :ps="$ps" :kategori="$kategori"/>
             </div>
 
             

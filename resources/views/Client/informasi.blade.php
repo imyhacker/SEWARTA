@@ -39,25 +39,27 @@
                     <div class="container">
                         <div class="row">
                             @foreach($info as $f)
-                            <div class="col-md-6 mt-4">
-                                <a href="{{route('baca_info', $f->id)}}">
-
-                                <div class="card text-white bg-primary mb-3">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-white">{{$f->judul}}</h5>
-                                        <p class="card-text">
-                                            Kategori : <span class="badge badge-success">{{$f->kategori}}</span><br>
-                                            <small> Di Upload : <span
-                                                    class="badge badge-success">{{$f->created_at->diffForHumans()}}</span></small><br>
-                                            <small> Di Update : <span
-                                                    class="badge badge-success">{{$f->updated_at->diffForHumans()}}</span></small>
-                                        </p>
-                                        <p></p>
-                                        <p class="card-text">{!! Str::limit($f->isi, 100, '...') !!}</p>
+                            <div class="col-lg-6 col-md-12 mb-5">
+                                <div class="blog-item">
+                                    <div class="blog-item-content">
+                                        <div class="blog-item-meta mb-3 mt-4">
+                                            <span class="text-black text-capitalize mr-3"><i
+                                                    class="icofont-calendar mr-1"></i> {{$f->created_at->diffForHumans()}}</span>
+                                                    <span class="text-black text-capitalize mr-3"><i
+                                                        class="icofont-tag mr-1"></i>Tag : {{$f->tag}}</span>
+                                                        <span class="text-black text-capitalize mr-3"><i
+                                                            class="icofont-book-mark mr-1"></i>Kategori : {{$f->kategori}}</span>
+                                        </div>
+    
+                                        <h2 class="mt-3 mb-3"><a href="{{route('baca', $f->id)}}">{{$f->judul}}</a></h2>
+    
+                                        <p class="mb-4">{{$f->sub}}</p>
+    
+                                        <a href="{{route('baca', $f->id)}}" target="_blank"
+                                            class="btn btn-main btn-icon btn-round-full">Read More <i
+                                                class="icofont-simple-right ml-2  "></i></a>
                                     </div>
                                 </div>
-                            </a>
-
                             </div>
                             @endforeach
 

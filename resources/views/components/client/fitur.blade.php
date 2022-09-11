@@ -4,28 +4,18 @@
             <div class="col-lg-12">
                 <div class="feature-block">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="feature-item mb-5 mb-lg-0">
-                                <div class="feature-icon mb-4">
+                        <div class="col-md-12">
+                            <div class="feature-item mb-5 mb-lg-0 ">
+                                <div class="feature-icon mb-4 d-flex justify-content-center">
                                     <i class="icofont-ebook"></i>
                                 </div>
-                                <span>{{$tb}} Total Berita</span>
-                                <h4 class="mb-3">Berita Desa {{$desa->desa ?? "Belum ada nama desa"}}</h4>
-                                <p class="mb-4">Baca Berita Terupdate Di Desa {{$desa->desa ?? "Belum ada nama desa"}}</p>
-                                <a href="{{route('semua_berita')}}" class="btn btn-main btn-round-full">Lihat Semua</a>
+                                <span class=" d-flex justify-content-center">{{$tb}} Total Berita</span>
+                                <h4 class="mb-3 d-flex justify-content-center">Berita Desa {{$desa->desa ?? "Belum ada nama desa"}}</h4>
+                                <p class="mb-4 d-flex justify-content-center">Baca Berita Terupdate Di Desa {{$desa->desa ?? "Belum ada nama desa"}}</p>
+                                <a href="{{route('semua_berita')}}" class="btn btn-main btn-block btn-round-full">Lihat Semua</a>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="feature-item mb-5 mb-lg-0">
-                                <div class="feature-icon mb-4">
-                                    <i class="icofont-ebook"></i>
-                                </div>
-                                <span>{{$ti}} Total Informasi</span>
-                                <h4 class="mb-3">Informasi Desa {{$desa->desa ?? "Belum ada nama desa"}}</h4>
-                                <p class="mb-4">Baca Informasi Terupdate Di Desa {{$desa->desa ?? "Belum ada nama desa"}}</p>
-                                <a href="{{route('semua_informasi')}}" class="btn btn-main btn-round-full">Lihat Semua</a>
-                            </div>
-                        </div>
+                        
                     </div>
 
 <!--

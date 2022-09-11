@@ -105,7 +105,7 @@
                                 <button class="btn btn-outline-success btn-block mb-4" data-toggle="modal"
                                     data-target="#tambahKategori">Tambah Kategori</button>
 
-                                <table class="table mt-3" id="table_tag">
+                                <table class="table mt-3" id="table_kategori">
                                     <thead>
                                         <tr>
                                             <th>No</th>

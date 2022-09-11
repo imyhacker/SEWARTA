@@ -39,6 +39,21 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
+                                    <label>Kategori Berita</label>
+
+                                    <select name="kategori" class="form-control" id="">
+                                        <option disabled selected value>Pilih Kategori</option>
+                                        @foreach($kategori as $kateg)
+                                        <option value="{{$kateg->kategori}}" @if($kateg->kategori == $kateg->kategori) selected
+                                            @endif >{{$kateg->kategori}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Sub Isi (Rangkuman Berita)</label>
+                                    <textarea name="sub" class="form-control" cols="30" rows="10" placeholder="Rangkuman Isi Berita">{{$data->sub}}</textarea>
+                                </div>
+                                <div class="form-group">
                                     <label>Isi Berita</label>
                                     <textarea name="isi" id="edit2" class="form-control" cols="30"
                                         rows="10">{{$data->isi}}</textarea>

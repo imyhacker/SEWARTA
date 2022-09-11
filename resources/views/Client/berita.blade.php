@@ -33,19 +33,19 @@
                         @forelse($berita as $br)
                         <div class="col-lg-12 col-md-12 mb-5">
                             <div class="blog-item">
-                                <div class="blog-thumb">
-                                    <img src="{{asset('gambar_berita/'.$br->gambar_berita)}}" alt="" class="img-fluid ">
-                                </div>
-
                                 <div class="blog-item-content">
                                     <div class="blog-item-meta mb-3 mt-4">
                                         <span class="text-black text-capitalize mr-3"><i
                                                 class="icofont-calendar mr-1"></i> {{$br->created_at->diffForHumans()}}</span>
+                                                <span class="text-black text-capitalize mr-3"><i
+                                                    class="icofont-tag mr-1"></i>Tag : {{$br->tag}}</span>
+                                                    <span class="text-black text-capitalize mr-3"><i
+                                                        class="icofont-book-mark mr-1"></i>Kategori : {{$br->kategori}}</span>
                                     </div>
 
                                     <h2 class="mt-3 mb-3"><a href="{{route('baca', $br->id)}}">{{$br->judul}}</a></h2>
 
-                                    <p class="mb-4">{!! Str::limit($br->isi, '199', '...') !!}</p>
+                                    <p class="mb-4">{{$br->sub}}</p>
 
                                     <a href="{{route('baca', $br->id)}}" target="_blank"
                                         class="btn btn-main btn-icon btn-round-full">Read More <i
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 
-               <x-client.side :tag="$tag" :ps="$ps"/>
+               <x-client.side :tag="$tag" :ps="$ps" :kategori="$kategori"/>
             </div>
 
             <div class="row mt-5">

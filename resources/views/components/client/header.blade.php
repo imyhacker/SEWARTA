@@ -42,7 +42,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-expanded="false">
-                            Kategori
+                            Berita
                         </a>
                         <div class="dropdown-menu">
                             @forelse($kategori as $k)
@@ -54,7 +54,6 @@
                     </li>
 
                     </li>
-                     <li class="nav-item"><a class="nav-link" href="{{route('semua_berita')}}">Berita</a></li>
                      <li class="nav-item"><a class="nav-link" href="https://api.whatsapp.com/send?phone={{$alamat->nomor_hp ?? ''}}&text=Halo%20Saya%20Ingin%20Menyampaikan%20Berita%20Nih">Kontak</a></li>
 
                     @Auth

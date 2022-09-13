@@ -242,12 +242,12 @@
 
                         <div class="modal-body">
                             <div class="form-group">
-                                <label>Tag</label>
-                                <input type="text" class="form-control" name="kategori" placeholder="Tag">
+                                <label>Judul Kategori</label>
+                                <input type="text" class="form-control" name="kategori" placeholder="Judul Kategori">
                             </div>
                             <div class="form-group">
-                                <label>Link Sumber</label>
-                                <input type="text" class="form-control" name="link" placeholder="Tag">
+                                <label>Link Terkait Kategori</label>
+                                <input type="text" class="form-control" name="link" placeholder="Link Terkait Kategori">
                             </div>
 
                         </div>

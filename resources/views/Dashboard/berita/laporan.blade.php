@@ -44,6 +44,7 @@
                                             <th>Kategori</th>
                                             <th>Sub (Rangkuman)</th>
                                             <th>Viewer</th>
+                                            <th>Di upload</th>
                                             <th>Tanggal Upload</th>
                                         </tr>
                                     </thead>
@@ -57,7 +58,8 @@
                                             <td>{{$berita->kategori}}</td>
                                             <td>{{$berita->sub}}</td>
                                             <td>{{$berita->viewer}}</td>
-                                            <td>{{$berita->created_at->format('d F Y')}}</td>
+                                            <td>{{$berita->created_at->diffForHumans()}}</td>
+                                            <td>{{$berita->created_at->format('d F Y H:i:s')}}</td>
                                             
                                         </tr>
                                         @endforeach
